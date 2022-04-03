@@ -1,0 +1,7 @@
+{
+  "name": "Labtest2_VatsalBhimani",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
