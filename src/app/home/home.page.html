@@ -1,20 +1,29 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title size="small">User Current GeoLocation</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="small">User Current GeoLocation</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-list>
+      <ion-item *ngFor="let i of locations">
+        <div class="data">
+          <p style="color:blue; text-align:center;">Longitude: {{i.long}}</p>
+          <p style="color:red; text-align:center;">Latitude: {{i.lat}}</p>
+          <p style="color:green; text-align:center;">Timestamp: {{i.time | date:'MM dd yyyy hh:mm:ss a'}}</p>
+          <div class="deleteBtn" style="text-align:center;">
+            <ion-button (click)="onDelete(i.time)">Delete location</ion-button>
+          </div>
+        </div>
+      </ion-item>
+     </ion-list>
   </div>
 </ion-content>
+
